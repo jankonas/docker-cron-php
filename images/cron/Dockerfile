@@ -22,9 +22,11 @@ COPY crontab /etc/crontabs/crontab
 
 ### php handling
 
-RUN apk add --update --no-cache fcgi
+RUN apk add --update --no-cache fcgi bash coreutils
 COPY php-console.sh /usr/local/bin/php-console
 RUN chmod +x /usr/local/bin/php-console
+COPY serialize-args.sh /usr/local/bin/serialize-args
+RUN chmod +x /usr/local/bin/serialize-args
 
 ### startup
 
