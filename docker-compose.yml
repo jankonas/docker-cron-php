@@ -9,3 +9,8 @@ services:
             - 80:80
         depends_on:
             - php
+
+    cron:
+        build: images/cron
+        depends_on:
+            - php
